@@ -86,6 +86,9 @@ La parte anatomica elejida para la conductancia cutánea es la parte superor de 
 
 Colocar los sensores en la base de la palma permite que el circuito sea más compacto y similar a un guante o una muñequera técnica, lo cual es mucho más cómodo para el sujeto de prueba que tener cables estorbando en las puntas de los dedos durante un monitoreo continuo.
 
+<img width="1204" height="1600" alt="image" src="https://github.com/user-attachments/assets/2e3c8512-28fa-4b77-8afa-31379d826ba0" />
+
+
 PARTE B
 
 Para capturar la toma de datos se utilizo el progrma de arduino IDE el cual se encarga de la adquisición y digitalización de la señal de conductancia cutánea mediante un esquema de muestreo periódico. Inicialmente, se define una frecuencia de muestreo (F_s) de 50 Hz, lo que establece un periodo de muestreo (T_s) de 20 ms, garantizando la captura de las variaciones lentas características de la GSR. Dentro del ciclo principal (loop), el sistema realiza la lectura del canal analógico (pin 34) obteniendo un valor digital de 12 bits (0–4095). Posteriormente, este valor es convertido a unidades de tensión mediante la relación:
@@ -141,6 +144,9 @@ Este algoritmo procesa la señal localmente para determinar el estado fisiológi
 - Alto: > 0.08V
 
 - Mensajería Inalámbrica: Los resultados se empaquetan en una cadena de texto (String) y se envían de forma inalámbrica cada 200 ms. Esto permite que el examinador reciba en su celular o PC no solo el valor crudo del voltaje, sino un diagnóstico inmediato del nivel de estrés del sujeto.
+
+<img width="457" height="713" alt="image" src="https://github.com/user-attachments/assets/126e9cce-c1ce-4c0d-8026-628a90de87a8" />
+
 
 
 

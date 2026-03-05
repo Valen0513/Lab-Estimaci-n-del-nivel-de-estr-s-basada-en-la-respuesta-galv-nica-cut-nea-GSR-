@@ -76,7 +76,15 @@ Se tomo en cuenta el siguiente circuito para el diseño del dispositivo:
 
 <img width="482" height="293" alt="image" src="https://github.com/user-attachments/assets/c7521bee-9a6d-4401-b69e-bfa52109edb9" />
 
+Los electrodos se hicieron con una lata de metal gruesa ya que el metal tiene una capacidad de conductancia electrica y su interacción con los iones de la piel, estos electrodos se hacen pequeñitos para que no molesten al paciente, se utilzo la resistencia de 68 kohm y el capacitor de 1 micro faradio ceramico, y se conecto como se muestra en la imagen pero con una esp32 en vez de el arduino, todo se soldo para que quedaras fijos los electrodos y se pudieran colocar en la parte del cuerpo elejida.
 
+La parte anatomica elejida para la conductancia cutánea es la parte superor de la mano encima de la muñeca ya que La respuesta galvánica cutánea (GSR) depende totalmente de la actividad de las glándulas sudoríparas ecrinas. La palma de la mano, específicamente la base del dedo pulgar (eminencia tenar) y la base del dedo meñique (eminencia hipotenar), tiene una de las concentraciones más altas de estas glándulas en todo el cuerpo humano. Esto permite capturar variaciones de conductancia mucho más fuertes y claras ante un estímulo de estrés. En esta zona se tiene:
+
+- Menos movimiento: A diferencia de las yemas de los dedos, estas zonas se mueven menos cuando el sujeto está realizando tareas como escribir o resolver el examen.
+
+- Mejor contacto: Al ser áreas más amplias y planas, facilitan que los electrodos (placas metálicas o Ag-AgCl) se mantengan firmes con las cintas de velcro, evitando saltos falsos en la señal
+
+Colocar los sensores en la base de la palma permite que el circuito sea más compacto y similar a un guante o una muñequera técnica, lo cual es mucho más cómodo para el sujeto de prueba que tener cables estorbando en las puntas de los dedos durante un monitoreo continuo. 
 
 
  

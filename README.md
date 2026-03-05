@@ -94,9 +94,18 @@ Para capturar la toma de datos se utilizo el progrma de arduino IDE el cual se e
 
 Para representar el voltaje real de la fuente de alimentación de 3.3 VDC. Finalmente, los datos se transmiten vía serial a una velocidad de 115,200 baudios con una precisión de tres decimales, permitiendo la visualización y el posterior análisis de las componentes estacionaria y transitoria en tiempo real.
 
+<img width="597" height="425" alt="image" src="https://github.com/user-attachments/assets/a1b8da11-1bba-4ac5-bd21-caabe5652d52" />
+
+
 Luego se pasa a Matlab para la visualizacion y abquisición en tiempo real donde el script establece una comunicación serial con la placa a 115,200 baudios. Mediante una función de captura, el programa recibe los valores de voltaje y los almacena en un vector, mientras actualiza dinámicamente una gráfica. Este proceso permite observar la respuesta del sujeto ante el protocolo de estimulación reposo e inhalación brusca. Una vez finalizado el tiempo de adquisición (T_rec), los datos se guardan en un archivo .mat para asegurar su integridad y permitir análisis posteriores. Para probar esto la persona realizo una inspiración profunda y luego exhalo levemente y siguio respirando normal dio como respuesta la GSR aumentada considerablemente para luego regresar muy paulatinamente al valor inicial tomando nota del valor inicial y hata el valor al que llega. 
 
+<img width="571" height="700" alt="Captura de pantalla 2026-03-04 231836" src="https://github.com/user-attachments/assets/98172089-08eb-4d6d-a8b8-b5e424748621" />
+
+
 Ahora ya con ese archivo .mat se hace el filtraod y el pr-procesamiento digital. Dado que la señal GSR es inherentemente lenta y propensa a ruidos de alta frecuencia (como interferencias electromagnéticas o temblores musculares), se aplica un filtro pasa-bajos Butterworth de segundo orden con una frecuencia de corte de 1 Hz. El uso de la función filtfilt garantiza un filtrado de fase cero, evitando desfases temporales en la detección de los picos.
+
+<img width="456" height="73" alt="image" src="https://github.com/user-attachments/assets/cb180bbc-81e6-476d-8432-39d38429f4d5" />
+
 
 Para el análisis de la actividad electrodérmica, se separa la señal filtrada en sus dos componentes principales:
 
@@ -104,7 +113,11 @@ Para el análisis de la actividad electrodérmica, se separa la señal filtrada 
 
 - Componente Fásica (SCR): Se obtiene restando la línea base de la señal filtrada. Sobre esta componente se aplica el algoritmo findpeaks con un umbral de 0.01 V para identificar las respuestas simpáticas ante estímulos, calculando automáticamente el número de picos, su amplitud promedio y su valor máximo.
 
+<img width="571" height="232" alt="image" src="https://github.com/user-attachments/assets/e3c65e6e-7c9c-456b-9477-5e453b665a0b" />
+
+
 Finalmente, se genera un tablero de control con tres subgráficas que permiten validar visualmente el comportamiento fisiológico: la señal filtrada total, la evolución de la línea base (SCL) y los pulsos rápidos de estrés (SCR) detectados. Los resultados estadísticos se despliegan en la consola para la interpretación clínica del nivel de activación del sujeto.
+
 
 
 

@@ -22,11 +22,8 @@ Morfología de la GSR
 Al aplicar un estímulo, la señal presenta una morfología característica que incluye:
 
 Latencia: El tiempo entre el estímulo y el inicio de la respuesta.
-
 Tiempo de subida (Rise time): Tiempo que tarda la señal en llegar a su pico máximo.
-
 Amplitud: La magnitud del incremento de conductancia.
-
 Tiempo de recuperación: El tiempo que tarda la señal en regresar a su nivel basal, el cual suele ser significativamente mayor al tiempo de subida.
 
 <img width="735" height="218" alt="image" src="https://github.com/user-attachments/assets/744bbec0-076f-4918-ad2f-14d2ae13f2d6" />

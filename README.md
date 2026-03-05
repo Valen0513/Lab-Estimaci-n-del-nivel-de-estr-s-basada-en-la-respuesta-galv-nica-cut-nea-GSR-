@@ -171,8 +171,57 @@ El software implementa un algoritmo de decisión basado en la amplitud de la Res
 
 La principal ventaja de observar estos niveles directamente en el celular es que el procesamiento de la señal se realiza internamente en el microcontrolador. Esto significa que el dispositivo no solo transmite datos crudos, sino que realiza un pre-diagnóstico clínico automático, facilitando la interpretación inmediata para el evaluador en un entorno de movilidad.
 
+PREGUNTAS PARA DISCUSIÓN
 
+ Pregunta 1: ¿A qué se debe que una inspiración profunda incremente la
+magnitud de la respuesta galvánica cutánea (GSR)?
 
+La inspiración profunda actúa como un estímulo fisiológico potente que activa de forma transitoria el sistema nervioso simpático. Esto ocurre por dos mecanismos principales:
+
+- Reflejo Autonómico: Al realizar una inhalación brusca y profunda, se produce una activación de los receptores de estiramiento en los pulmones y un cambio en la presión intratorácica. El centro de control cardiovascular y autonómico en el tallo cerebral interpreta esto como una señal de alerta leve, enviando una descarga de acetilcolina hacia las glándulas sudoríparas ecrinas.
+
+- Llenado de los Conductos Sudoríparos: La activación simpática provoca que las glándulas secreten sudor. Incluso si el sudor no llega a desbordarse por el poro, el llenado de los conductos sudoríparos crea puestes de baja resistencia eléctrica a través de la epidermis que es aislante. Como la conductancia es el inverso de la resistencia G = 1/R, al llenarse estos canales, la conductancia aumenta súbitamente, generando el pico que observaste en MATLAB o en tu celular.
+
+• Pregunta 2: ¿Cuáles serían las ventajas y desventajas de utilizar la GSR
+como indicador de estrés?
+
+Ventajas:
+
+- Sensibilidad al Sistema Simpático: A diferencia del ritmo cardíaco, que está influenciado tanto por el sistema simpático como por el parasimpático, las glándulas sudoríparas ecrinas están controladas exclusivamente por el sistema simpático que es uno de los sistemas que solo tiene el sistema simpatico. Esto hace que la GSR sea una medida muy limpia del nivel de alerta o estrés.
+
+- No Invasiva y Bajo Costo: se puede implementar con materiales sencillos como lo implementamos nostoros que fue con electrodos metálicos, resistencias y un capacitor, sin causar dolor o incomodidad al sujeto ya que se tilizo una muñequera para que no le incomodara a la persona.
+
+- Respuesta Rápida: Permite identificar reacciones emocionales o cognitivas en cuestión de pocos segundos después de ocurrido el estímulo, auque aveces se demora en bajar cuando esta en estres alto.
+
+Desventajas:
+
+- Inespecificidad Emocional: La GSR indica cuánta activación hay  que seria la excitación, pero no qué emoción la causa. El sensor marcará un nivel alto tanto si el sujeto está muy asustado como si está muy feliz o muy enojado.
+
+- Sensibilidad a Factores Externos: La señal es altamente dependiente de la temperatura ambiente y la humedad. Un clima cálido puede elevar la línea base (SCL) y enmascarar las respuestas al estrés.
+
+- Artefactos de Movimiento: Como observaste al diseñar el vestible, cualquier movimiento que altere el contacto del electrodo con la piel genera ruido que puede confundirse con una respuesta de estrés (SCR) real, y como es en la parte de la mano la persona la mueve mucho y eso puede causar ruido como que suba de nivel normal a estres moderado o alto.
+
+CONCLUSIONES
+
+- Validación del Diseño de Seguridad: Se demostró mediante cálculos de la Ley de Ohm que el uso de una resistencia limitadora de 68Kohm garantiza la integridad del sujeto de prueba. Incluso en el peor escenario de cortocircuito en la piel, la corriente resultante es 0.073mA se mantiene trece veces por debajo del umbral de percepción de 1mA, cumpliendo con los estándares de seguridad para instrumentación biomédica.
+
+- Eficacia de la Configuración de Sensores: la ubicación de los electrodos permitió una captura óptima de la señal. Esta zona, al poseer una alta densidad de glándulas sudoríparas ecrinas, facilitó la identificación de las variaciones de conductancia sin necesidad de etapas de amplificación complejas, validando el uso del divisor de tensión como transductor primario.
+
+- Separación de Componentes de la EDA: Mediante el procesamiento digital en MATLAB, fue posible distinguir con éxito la componente tónica (SCL) de la fásica (SCR). El uso de filtros pasa-bajos y medias móviles permitió aislar las respuestas simpáticas ante estímulos específicos como la inspiración profunda, demostrando que la GSR es un indicador dinámico y sensible para la estimación del estado autonómico.
+
+- Ventajas del Dispositivo Vestible e Inalámbrico: La implementación de la transmisión vía Bluetooth hacia un dispositivo móvil eliminó los artefactos de movimiento y el ruido inducido por cables largos. Además, la capacidad del ESP32 para clasificar el estrés en tiempo real Bajo, Moderado, Alto demuestra el potencial de los sistemas embebidos para el pre-diagnóstico clínico en entornos de movilidad.
+
+REFERENCIAS
+
+- Boucsein, W. (2012). Electrodermal Activity. Springer Science & Business Media. (Referencia fundamental sobre la fisiología de la piel).
+
+- Figner, B., & Murphy, R. O. (2011). Using skin conductance in judgment and decision making research. En A Handbook of Process Tracing Methods for Decision Research (pp. 163-184). Routledge.
+
+- Loggia, M. L., Juneau, M., & Bushnell, C. M. (2011). Autonomic responses to heat pain: Heart rate, skin conductance, and their relation to verbal ratings and stimulus intensity. Pain, 152(3), 592-598. 
+
+- Mainardi, L. T. (2011). Biomedical Signal Processing. En Encyclopedia of Biomedical Engineering. Elsevier. (Para la parte del filtrado y procesamiento en MATLAB).
+
+- Universidad Militar Nueva Granada. (2025). Guía de Laboratorio: Estimación del nivel de estrés basada en la respuesta galvánica cutánea (GSR). Facultad de Ingeniería, Programa de Ingeniería Biomédica.
 
 
 

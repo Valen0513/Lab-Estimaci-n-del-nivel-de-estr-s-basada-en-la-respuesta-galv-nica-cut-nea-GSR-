@@ -51,7 +51,7 @@ La norma IEC 60479 define los efectos del paso de la corriente eléctrica por el
 
 Tabla 1. Efectos fisiológicos de la electricidad en los seres humanos (NTC-IEC 60601-1)
 
-Calculos de Corriente 
+CALCULOS 
 
 <img width="338" height="98" alt="image" src="https://github.com/user-attachments/assets/0a00a1e8-1550-4246-aa46-dde9c1ea4632" />
 
@@ -65,9 +65,18 @@ Vee= 0 voltios
 
 R= 68 kohm
 
-Resistencia cutánea= 0 Ohm 
+Resistencia cutánea= 0 Ohm. Pero cuando se toma en cuenta La resistencia cutánea se ubica normalmente entre los 300K y 2M
+(Salsenau et al., 2013)
 
 La corriente resultante de 0,0735 mA es significativamente menor al límite permitido de 1 mA, lo cual confirma que el diseño es totalmente seguro para el sujeto de prueba.
+
+DISEÑO
+
+Se tomo en cuenta el siguiente circuito para el diseño del dispositivo:
+
+<img width="482" height="293" alt="image" src="https://github.com/user-attachments/assets/c7521bee-9a6d-4401-b69e-bfa52109edb9" />
+
+
 
 
  

@@ -1,5 +1,5 @@
 # Lab-Estimaci-n-del-nivel-de-estr-s-basada-en-la-respuesta-galv-nica-cut-nea-GSR-
-Pate A 
+PARTE A 
 
 Actividad Electrodermica 
 
@@ -84,7 +84,30 @@ La parte anatomica elejida para la conductancia cutánea es la parte superor de 
 
 - Mejor contacto: Al ser áreas más amplias y planas, facilitan que los electrodos (placas metálicas o Ag-AgCl) se mantengan firmes con las cintas de velcro, evitando saltos falsos en la señal
 
-Colocar los sensores en la base de la palma permite que el circuito sea más compacto y similar a un guante o una muñequera técnica, lo cual es mucho más cómodo para el sujeto de prueba que tener cables estorbando en las puntas de los dedos durante un monitoreo continuo. 
+Colocar los sensores en la base de la palma permite que el circuito sea más compacto y similar a un guante o una muñequera técnica, lo cual es mucho más cómodo para el sujeto de prueba que tener cables estorbando en las puntas de los dedos durante un monitoreo continuo.
+
+PARTE B
+
+Para capturar la toma de datos se utilizo el progrma de arduino IDE el cual se encarga de la adquisición y digitalización de la señal de conductancia cutánea mediante un esquema de muestreo periódico. Inicialmente, se define una frecuencia de muestreo (F_s) de 50 Hz, lo que establece un periodo de muestreo (T_s) de 20 ms, garantizando la captura de las variaciones lentas características de la GSR. Dentro del ciclo principal (loop), el sistema realiza la lectura del canal analógico (pin 34) obteniendo un valor digital de 12 bits (0–4095). Posteriormente, este valor es convertido a unidades de tensión mediante la relación:
+
+<img width="243" height="83" alt="image" src="https://github.com/user-attachments/assets/a8cc9c86-8ba1-4c47-ba27-3b86416234bd" />
+
+Para representar el voltaje real de la fuente de alimentación de 3.3 VDC. Finalmente, los datos se transmiten vía serial a una velocidad de 115,200 baudios con una precisión de tres decimales, permitiendo la visualización y el posterior análisis de las componentes estacionaria y transitoria en tiempo real.
+
+Luego se pasa a Matlab para la visualizacion y abquisición en tiempo real donde el script establece una comunicación serial con la placa a 115,200 baudios. Mediante una función de captura, el programa recibe los valores de voltaje y los almacena en un vector, mientras actualiza dinámicamente una gráfica. Este proceso permite observar la respuesta del sujeto ante el protocolo de estimulación reposo e inhalación brusca. Una vez finalizado el tiempo de adquisición (T_rec), los datos se guardan en un archivo .mat para asegurar su integridad y permitir análisis posteriores. Para probar esto la persona realizo una inspiración profunda y luego exhalo levemente y siguio respirando normal dio como respuesta la GSR aumentada considerablemente para luego regresar muy paulatinamente al valor inicial tomando nota del valor inicial y hata el valor al que llega. 
+
+Ahora ya con ese archivo .mat se hace el filtraod y el pr-procesamiento digital. Dado que la señal GSR es inherentemente lenta y propensa a ruidos de alta frecuencia (como interferencias electromagnéticas o temblores musculares), se aplica un filtro pasa-bajos Butterworth de segundo orden con una frecuencia de corte de 1 Hz. El uso de la función filtfilt garantiza un filtrado de fase cero, evitando desfases temporales en la detección de los picos.
+
+Para el análisis de la actividad electrodérmica, se separa la señal filtrada en sus dos componentes principales:
+
+- Componente Tónica (SCL): Se extrae mediante una media móvil (movmean) con una ventana de 10 segundos, representando el nivel basal de conductancia.
+
+- Componente Fásica (SCR): Se obtiene restando la línea base de la señal filtrada. Sobre esta componente se aplica el algoritmo findpeaks con un umbral de 0.01 V para identificar las respuestas simpáticas ante estímulos, calculando automáticamente el número de picos, su amplitud promedio y su valor máximo.
+
+Finalmente, se genera un tablero de control con tres subgráficas que permiten validar visualmente el comportamiento fisiológico: la señal filtrada total, la evolución de la línea base (SCL) y los pulsos rápidos de estrés (SCR) detectados. Los resultados estadísticos se despliegan en la consola para la interpretación clínica del nivel de activación del sujeto.
+
+
+
 
 
  

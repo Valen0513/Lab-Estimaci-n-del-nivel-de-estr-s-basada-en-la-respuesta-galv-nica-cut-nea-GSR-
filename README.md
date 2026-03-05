@@ -118,6 +118,30 @@ Para el análisis de la actividad electrodérmica, se separa la señal filtrada 
 
 Finalmente, se genera un tablero de control con tres subgráficas que permiten validar visualmente el comportamiento fisiológico: la señal filtrada total, la evolución de la línea base (SCL) y los pulsos rápidos de estrés (SCR) detectados. Los resultados estadísticos se despliegan en la consola para la interpretación clínica del nivel de activación del sujeto.
 
+PARTE C 
+
+Implementación de conectividad inalámbrica 
+
+Para cumplir con el concepto de dispositivo vestible, el sistema utiliza el protocolo de comunicación inalámbrica Bluetooth Classic, aprovechando el módulo integrado en el microcontrolador ESP32, la cual se va a alimentar con una power bank de 5 voltios. Esta implementación permite la movilidad del sujeto de prueba y la monitorización remota desde un dispositivo móvil o computador sin interferencias por cables.
+
+Configuración de Bluetooth 
+
+Se utiliza la librería BluetoothSerial.h, la cual emula un puerto serie estándar sobre una conexión Bluetooth (perfil SPP - Serial Port Profile). Mediante el comando SerialBT.begin("ESP32-GSR-Estres"), el dispositivo se hace visible para otros terminales con un nombre identificativo, facilitando el emparejamiento.
+
+Este algoritmo procesa la señal localmente para determinar el estado fisiológico del usuario:
+
+- Procesamiento Local: El ESP32 calcula la componente tónica (SCL) mediante un filtro de media exponencial (EMA) y la componente fásica (SCR) en tiempo real.
+
+- Lógica de Umbrales: Se establecen tres niveles de estrés basados en la amplitud de la SCR los cuales se obtuvieron de la prueva de el paciente al realizar la inspiración profunda y luego exhalar lentamente:
+
+- Bajo: < 0.04 V
+
+- Moderado: 0.04 V a 0.08 V
+
+- Alto: > 0.08V
+
+- Mensajería Inalámbrica: Los resultados se empaquetan en una cadena de texto (String) y se envían de forma inalámbrica cada 200 ms. Esto permite que el examinador reciba en su celular o PC no solo el valor crudo del voltaje, sino un diagnóstico inmediato del nivel de estrés del sujeto.
+
 
 
 

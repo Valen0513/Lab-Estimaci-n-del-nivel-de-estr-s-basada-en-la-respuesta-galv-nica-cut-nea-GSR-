@@ -48,6 +48,7 @@ La norma IEC 60479 define los efectos del paso de la corriente eléctrica por el
 75 - 100 mA: Umbral de fibrilación ventricular, que puede ser fatal en pocos segundos.
 
 <img width="695" height="395" alt="image" src="https://github.com/user-attachments/assets/90d0578c-df97-42c1-8169-9eb4da553233" />
+
 Tabla 1. Efectos fisiológicos de la electricidad en los seres humanos (NTC-IEC 60601-1)
 
 Calculos de Corriente 
@@ -65,6 +66,9 @@ Vee= 0 voltios
 R= 68 kohm
 
 Resistencia cutánea= 0 Ohm 
+
+La corriente resultante de 0,0735 mA es significativamente menor al límite permitido de 1 mA, lo cual confirma que el diseño es totalmente seguro para el sujeto de prueba.
+
 
  
  

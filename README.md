@@ -147,6 +147,30 @@ Este algoritmo procesa la señal localmente para determinar el estado fisiológi
 
 <img width="457" height="713" alt="image" src="https://github.com/user-attachments/assets/126e9cce-c1ce-4c0d-8026-628a90de87a8" />
 
+Visualización en el dispositivo móvil
+
+Para la validación del dispositivo vestible, se utilizó una aplicación de terminal Bluetooth en un dispositivo móvil, la cual recibe los datos procesados directamente desde el ESP32 alimentada por una power bank. Esta etapa permite una monitorización inalámbrica y autónoma, sin necesidad de cables conectados a una computadora.
+
+La pantalla del celular despliega tres valores fundamentales en tiempo real:
+
+- GSR (V): El voltaje total medido, que representa la resistencia de la piel en ese instante.
+
+- SCR (V): La componente fásica filtrada, que indica si hubo una reacción nerviosa súbita (picos de conductancia).
+
+- Nivel de Estrés: Un diagnóstico textual basado en la magnitud de la respuesta fásica.
+
+Umbrales 
+
+El software implementa un algoritmo de decisión basado en la amplitud de la Respuesta de Conductancia Cutánea (SCR). Los criterios de clasificación mostrados en el celular son:
+
+- ESTRÉS BAJO: Se muestra cuando el sujeto está en reposo térmico y mental. Las variaciones de voltaje (SCR) son mínimas o inexistentes (< 0.04 V), indicando predominancia del sistema nervioso parasimpático.
+
+- ESTRÉS MODERADO: Se activa ante estímulos leves o estados de alerta moderada (como una respiración profunda o un ruido inesperado). El sistema detecta variaciones de voltaje entre 0.04V y 0.08 V.
+
+- ESTRÉS ALTO: Se visualiza tras estímulos fuertes que provocan una activación simpática significativa como el ejercicio de inhalación brusca. El aumento súbito de la sudoración reduce la resistencia de la piel, generando una SCR mayor a 0.08 V.
+
+La principal ventaja de observar estos niveles directamente en el celular es que el procesamiento de la señal se realiza internamente en el microcontrolador. Esto significa que el dispositivo no solo transmite datos crudos, sino que realiza un pre-diagnóstico clínico automático, facilitando la interpretación inmediata para el evaluador en un entorno de movilidad.
+
 
 
 

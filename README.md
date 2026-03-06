@@ -171,6 +171,7 @@ El software implementa un algoritmo de decisión basado en la amplitud de la Res
 
 La principal ventaja de observar estos niveles directamente en el celular es que el procesamiento de la señal se realiza internamente en el microcontrolador. Esto significa que el dispositivo no solo transmite datos crudos, sino que realiza un pre-diagnóstico clínico automático, facilitando la interpretación inmediata para el evaluador en un entorno de movilidad.
 
+<img width="457" height="713" alt="image" src="https://github.com/Valen0513/Lab-Estimaci-n-del-nivel-de-estr-s-basada-en-la-respuesta-galv-nica-cut-nea-GSR-/blob/main/WhatsApp%20Image%202026-03-05%20at%207.06.06%20PM.jpeg" />
 PREGUNTAS PARA DISCUSIÓN
 
  Pregunta 1: ¿A qué se debe que una inspiración profunda incremente la

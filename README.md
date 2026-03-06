@@ -1,4 +1,5 @@
-# Lab-Estimaci-n-del-nivel-de-estr-s-basada-en-la-respuesta-galv-nica-cut-nea-GSR-
+# Laboratorio 2: Estimación del nivel de estrés basada en la respuesta galvánica cutánea (GSR)
+
 PARTE A 
 
 Actividad Electrodermica 

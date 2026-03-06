@@ -92,7 +92,7 @@ Colocar los sensores en la base de la palma permite que el circuito sea más com
 
 PARTE B
 
-Para capturar la toma de datos se utilizo el progrma de arduino IDE el cual se encarga de la adquisición y digitalización de la señal de conductancia cutánea mediante un esquema de muestreo periódico. Inicialmente, se define una frecuencia de muestreo (F_s) de 50 Hz, lo que establece un periodo de muestreo (T_s) de 20 ms, garantizando la captura de las variaciones lentas características de la GSR. Dentro del ciclo principal (loop), el sistema realiza la lectura del canal analógico (pin 34) obteniendo un valor digital de 12 bits (0–4095). Posteriormente, este valor es convertido a unidades de tensión mediante la relación:
+Para capturar la toma de datos se utilizo el programa de arduino IDE el cual se encarga de la adquisición y digitalización de la señal de conductancia cutánea mediante un esquema de muestreo periódico. Inicialmente, se define una frecuencia de muestreo (F_s) de 50 Hz, lo que establece un periodo de muestreo (T_s) de 20 ms, garantizando la captura de las variaciones lentas características de la GSR. Dentro del ciclo principal (loop), el sistema realiza la lectura del canal analógico (pin 34) obteniendo un valor digital de 12 bits (0–4095). Posteriormente, este valor es convertido a unidades de tensión mediante la relación:
 
 <img width="243" height="83" alt="image" src="https://github.com/user-attachments/assets/a8cc9c86-8ba1-4c47-ba27-3b86416234bd" />
 

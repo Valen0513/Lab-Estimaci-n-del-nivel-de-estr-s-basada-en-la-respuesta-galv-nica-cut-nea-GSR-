@@ -1,5 +1,9 @@
 # Laboratorio 2: Estimación del nivel de estrés basada en la respuesta galvánica cutánea (GSR)
 
+#Leidy Valentina Rodríguez Gómez 
+
+#Ana Maria Abril Gómez 
+
 PARTE A 
 
 Actividad Electrodermica 

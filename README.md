@@ -122,7 +122,7 @@ Para el análisis de la actividad electrodérmica, se separa la señal filtrada 
 
 Finalmente, se genera un tablero de control con tres subgráficas que permiten validar visualmente el comportamiento fisiológico: la señal filtrada total, la evolución de la línea base (SCL) y los pulsos rápidos de estrés (SCR) detectados. Los resultados estadísticos se despliegan en la consola para la interpretación clínica del nivel de activación del sujeto.
 
-<img width="571" height="232" alt="image" src="Captura de pantalla 2026-03-04 203321.png" />
+<img width="571" height="332" alt="image" src="Captura de pantalla 2026-03-04 203321.png" />
 
 PARTE C 
 

@@ -106,7 +106,7 @@ Luego se pasa a Matlab para la visualizacion y abquisición en tiempo real donde
 <img width="571" height="700" alt="Captura de pantalla 2026-03-04 231836" src="https://github.com/user-attachments/assets/98172089-08eb-4d6d-a8b8-b5e424748621" />
 
 
-Ahora ya con ese archivo .mat se hace el filtraod y el pr-procesamiento digital. Dado que la señal GSR es inherentemente lenta y propensa a ruidos de alta frecuencia (como interferencias electromagnéticas o temblores musculares), se aplica un filtro pasa-bajos Butterworth de segundo orden con una frecuencia de corte de 1 Hz. El uso de la función filtfilt garantiza un filtrado de fase cero, evitando desfases temporales en la detección de los picos.
+Ahora ya con ese archivo .mat se hace el filtrado y el preprocesamiento digital. Dado que la señal GSR es inherentemente lenta y propensa a ruidos de alta frecuencia (como interferencias electromagnéticas o temblores musculares), se aplica un filtro pasa-bajos Butterworth de segundo orden con una frecuencia de corte de 1 Hz. El uso de la función filtfilt garantiza un filtrado de fase cero, evitando desfases temporales en la detección de los picos.
 
 <img width="456" height="73" alt="image" src="https://github.com/user-attachments/assets/cb180bbc-81e6-476d-8432-39d38429f4d5" />
 
